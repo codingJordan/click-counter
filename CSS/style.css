@@ -29,6 +29,10 @@ button:hover {
     color: white;
 }
 
-.countNum h1::after {
-    content: " click(s)";
+.countNum::after {
+    content: " click";
+}
+
+.countNumP::after {
+    content: " clicks";
 }

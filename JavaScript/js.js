@@ -1,23 +1,19 @@
-/*
-    Created By Jordan
-
-    Website - https://codingJordan.github.io
-    Twitter - https://twitter.com/jordanCoding
-    YouTube - https://www.youtube.com/channel/UCpBrGERV1KaIGjsQPz8z2Wg
-    GitHub - https://github.com/codingJordan
-*/
-
-//Query Selectors
 let btnUp = document.querySelector(".countUp");
 let btnRst = document.querySelector(".countRst");
 let clickCount = document.querySelector(".countNum h1");
+let numberCount = document.querySelector(".count")
 
-//Count up button function.
 btnUp.addEventListener("click", () => {
-    clickCount.innerHTML++;
+    numberCount.innerHTML++;
+    if(numberCount.innerHTML == 1){
+        numberCount.classList.add('countNum', ':after')
+    } else if(numberCount.innerHTML > 1){
+        numberCount.classList.remove('countNum', ':after')
+        numberCount.classList.add('countNumP', ':after')
+    }
 });
 
-//Count reset button function.
 btnRst.addEventListener("click", () => {
-    clickCount.innerHTML = 0;
+    numberCount.innerHTML = 0;
+    numberCount.className = "";
 });
